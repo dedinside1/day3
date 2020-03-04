@@ -28,6 +28,11 @@
         					<a class="nav-link" href="/contacts">Контакты</a>
      					 </li>
    					 </ul>
+						 <?php if($_SESSION['login'] == ''):
+						 echo "<a href='login.php' class='btn btn-lg btn-primary'> Вход </a> ";
+						   ?>
+						 <?php else: echo "Вы авторизированны, " . $_SESSION['login']; ?>
+						 <?php endif;?>
   				</div>
 			</nav>
 				<div>

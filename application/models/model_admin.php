@@ -2,8 +2,7 @@
 class Model_Admin extends Model
 {
 
-  function LodinAdmin($login, $password)
-  {
+  public function LodinAdmin($login, $password){
 		$sql="SELECT * FROM user WHERE login='$login' and password='$password'";
     $result = mysqli_query($this->link, $sql) or die('__________ERROR___________');
     $count = mysqli_num_rows($result);
@@ -15,14 +14,9 @@ class Model_Admin extends Model
       $fsmg= 'Ошибка';
       echo "не залогинился";
     }
-    if (isset($_SESSION['login'])) {
-      $login=$_SESSION['login'];
-      echo 'Привет,' . $login . ' ';
-      echo 'Вы вошли!';
-    }
-    return $result;
+    return $result, $_SESSION['login'];
 }
-
+}
 
   public static function InsertInfo($Year, $Site, $Description)
     {
@@ -40,6 +34,12 @@ class Model_Admin extends Model
     public static function UpdateInfo ($id, $Year, $Site, $Description){
 
         $sql = "UPDATE portfolio SET Year='$Year' and Site='$Site' and Description='$Description' WHERE id='$id'";
+        $result = mysqli_query($this->link, $sql) or die('__________ERROR___________');
+        return $result;
+    }
+
+    public static function UpdateInfo ($id){
+        $sql = "DELETE FROM portfolio WHERE id='$id'";
         $result = mysqli_query($this->link, $sql) or die('__________ERROR___________');
         return $result;
     }

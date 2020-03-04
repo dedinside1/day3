@@ -21,12 +21,23 @@ class Controller_Admin extends Controller
       		//Model_Admin::LodinAdmin($Login, $password);
 					$this->model->LodinAdmin($Login, $password);
         }
-		if(isset($_POST['submitupd'])) {
-          $id = $_POST['id'];
-          $Year = $_POST['Year'];
-					$Site = $_POST['Site'];
-					$Description = $_POST['Description'];
-          $this->model->UpdateInfo($id, $Year, $Site, $Description);
-	}
+
+			if(isset($_POST['submitupd'])) {
+	          $id = $_POST['id'];
+	          $Year = $_POST['Year'];
+						$Site = $_POST['Site'];
+						$Description = $_POST['Description'];
+	          $this->model->UpdateInfo($id, $Year, $Site, $Description);
+
+			if(isset($_POST['submitadd'])) {
+	          $Year = $_POST['Year'];
+						$Site = $_POST['Site'];
+						$Description = $_POST['Description'];
+	          $this->model->AddInfo($id, $Year, $Site, $Description);
+
+			if(isset($_POST['submitupd'])) {
+	          $id = $_POST['id'];
+	          $this->model->DeleteInfo($id);
+}
 }
 }
