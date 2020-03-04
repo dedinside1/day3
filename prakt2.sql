@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 03 2020 г., 14:21
+-- Время создания: Мар 04 2020 г., 06:55
 -- Версия сервера: 10.4.6-MariaDB
 -- Версия PHP: 7.3.8
 
@@ -31,8 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `portfolio` (
   `id` int(11) NOT NULL,
   `Year` int(4) NOT NULL,
-  `Site` varchar(255) NOT NULL,
-  `Description` varchar(500) NOT NULL
+  `Site` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `Description` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -40,7 +40,9 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id`, `Year`, `Site`, `Description`) VALUES
-(1, 3444, 'fetgerg', 'dfgergergdfgreg');
+(1, 3444, 'fetgerg', 'dfgergergdfgreg'),
+(2, 3221, 'xcvfdfhgsgsc', 'faewrgrdyjcghmfjxfghjixdfs\'ohjidzkgxc\'v;lhmkdfgh;ljdprsoth;r'),
+(5, 4534, 'екрвапкупу', 'вапкупвапкупвапкупвап');
 
 -- --------------------------------------------------------
 
@@ -53,6 +55,13 @@ CREATE TABLE `users` (
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `password`) VALUES
+(1, 'admin', 'admin');
 
 --
 -- Индексы сохранённых таблиц
@@ -78,13 +87,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

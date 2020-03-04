@@ -28,14 +28,6 @@
         					<a class="nav-link" href="/contacts">Контакты</a>
      					 </li>
    					 </ul>
-						 	<<?php require_once 'application/models/model_admin.php' ?>
-						 <?php if($_SESSION['login'] == ''):
-							   echo "Вы не авторизированны"?>
-						 <?php else:
-											 echo "<a href='logout.php' class='btn btn-lg btn-primary'> Выход </a> ";?>
-											 <?php echo "Вы авторизированны, " . $_SESSION['login']; ?>
-						 <?php endif;?>
-
   				</div>
 			</nav>
 				<div>
