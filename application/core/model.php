@@ -10,6 +10,9 @@ class Model
 				$GLOBALS['password'],
 				$GLOBALS['database'],
 			), 'utf8');
+			if ($this->link->connect_error){
+				die('error' . $this->link->connect_error);
+			}
 	}
 	public function get_data()
 	{
